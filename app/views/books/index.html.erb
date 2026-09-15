@@ -1,0 +1,24 @@
+<%# for the flash notice if there is one%>
+<% if notice %>
+    <p><%= notice %></p>
+<% end %>
+
+<h1>Book Collection</h1>
+
+<%= link_to "Add a Book", new_book_path %>
+
+<%#if we have books, list them with options for details and edit%>
+<% if @books.any? %>
+    <ul>
+        <% @books.each do |book| %>
+            <li>
+                <%= book.title %>
+                <%= link_to "Show", book_path(book) %>
+                <%= link_to "Edit", edit_book_path(book) %>
+                <%= link_to "Delete", delete_book_path(book) %>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>No books have been added yet.</p>
+<% end %>
