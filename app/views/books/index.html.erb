@@ -7,12 +7,16 @@
 
 <%= link_to "Add a Book", new_book_path %>
 
-<%#if we have books, list them with options for details and edit%>
+<%# if we have books, list them with options for details and edit %>
 <% if @books.any? %>
     <ul>
         <% @books.each do |book| %>
             <li>
-                <%= book.title %>
+                <strong><%= book.title %></strong>
+                — Author: <%= book.author %>
+                — Price: $<%= book.price %>
+                — Published: <%= book.published_date %>
+
                 <%= link_to "Show", book_path(book) %>
                 <%= link_to "Edit", edit_book_path(book) %>
                 <%= link_to "Delete", delete_book_path(book) %>

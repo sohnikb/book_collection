@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2026_09_14_110021) do
+ActiveRecord::Schema.define(version: 2026_09_21_062622) do
 
   create_table "books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "author"
+    t.decimal "price", precision: 10, scale: 2
+    t.date "published_date"
   end
 
 end
