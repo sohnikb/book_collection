@@ -7,7 +7,7 @@
 
 <%= link_to "Add a Book", new_book_path %>
 
-<%# if we have books, list them with options for details and edit %>
+<%# list books with options for details and edit %>
 <% if @books.any? %>
     <ul>
         <% @books.each do |book| %>
