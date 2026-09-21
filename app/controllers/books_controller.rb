@@ -17,6 +17,7 @@ class BooksController < ApplicationController
             # flash message
             redirect_to root_path, notice: "Book was successfully added."
         else
+            flash.now[:notice] = "Book could not be added."
             render :new
         end
     end
@@ -57,6 +58,11 @@ class BooksController < ApplicationController
     private
 
     def book_params
-        params.require(:book).permit(:title)
+        params.require(:book).permit(
+            :title,
+            :author,
+            :price,
+            :published_date
+        )
     end
 end

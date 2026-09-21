@@ -3,7 +3,22 @@
 <%= form_with model: @book do |form| %>
     <div>
         <%= form.label :title, "Title" %>
-        <%= form.text_field :title%>
+        <%= form.text_field :title %>
+    </div>
+
+    <div>
+        <%= form.label :author, "Author" %>
+        <%= form.text_field :author %>
+    </div>
+
+    <div>
+        <%= form.label :price, "Price" %>
+        <%= form.number_field :price, step: 0.01 %>
+    </div>
+
+    <div>
+        <%= form.label :published_date, "Published Date" %>
+        <%= form.date_select :published_date %>
     </div>
 
     <div>
