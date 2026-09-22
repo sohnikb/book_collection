@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.2'
+ruby '3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
@@ -18,10 +18,15 @@ gem 'webpacker', '>= 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+gem 'json', '~> 2.6.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'devise', '~> 4.9'
+gem 'omniauth', '~> 2.1'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
+gem 'omniauth-google-oauth2', '~> 1.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -44,6 +49,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'brakeman'
 end
 
 group :test do

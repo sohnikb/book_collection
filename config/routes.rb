@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  # for resourceful routes
-  resources :books do
-    member do
-      get :delete
-    end
-  end
+  root 'books#index'
 
-  root "books#index"
+  devise_for :admins, controllers: { omniauth_callbacks:
+  'admins/omniauth_callbacks' }
+  devise_scope :admin do
+    get 'admins/sign_in', to: 'admins/sessions#new', as: :new_admin_session
+    get 'admins/sign_out', to: 'admins/sessions#destroy', as: :destroy_admin_session
+  end
+  resources :books
 end
